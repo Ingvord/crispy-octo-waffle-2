@@ -294,6 +294,12 @@ mod runtime {
 	// Include the custom logic from the pallet-template in the runtime.
 	#[runtime::pallet_index(7)]
 	pub type TemplateModule = pallet_template;
+
+	#[runtime::pallet_index(51)]
+	pub type Utility = pallet_utility;
+
+	#[runtime::pallet_index(52)]
+	pub type CustomPallet = custom_pallet;
 }
 
 /// The address format for describing accounts.
