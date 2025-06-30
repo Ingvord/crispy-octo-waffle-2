@@ -48,7 +48,7 @@ pallet-transaction-payment-rpc-runtime-api.workspace = true
 frame-benchmarking = { optional = true, workspace = true }
 frame-system-benchmarking = { optional = true, workspace = true }
 pallet-template.workspace = true
-pallet-utility = { version = "39.0.0", default-features = false }
+pallet-utility.workspace = true
 custom-pallet = { path = "../pallets/custom-pallet", default-features = false }
 
 [build-dependencies]

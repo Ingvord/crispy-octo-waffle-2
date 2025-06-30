@@ -1,10 +1,6 @@
+use frame_support::parameter_types;
 // Local module imports
-use super::OriginCaller;
-
-impl pallet_parachain_template::Config for Runtime {
-    type RuntimeEvent = RuntimeEvent;
-    type WeightInfo = pallet_parachain_template::weights::SubstrateWeight<Runtime>;
-}
+use super::{OriginCaller, Runtime, RuntimeCall, RuntimeEvent};
 
 // Configure utility pallet.
 impl pallet_utility::Config for Runtime {
