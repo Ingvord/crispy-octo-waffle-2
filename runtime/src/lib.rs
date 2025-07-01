@@ -151,6 +151,36 @@ parameter_types! {
 	pub const SS58Prefix: u8 = 42;
 }
 
+#[cfg(feature = "std")]
+use chain_spec_builder::chain_spec_preset;
+
+#[cfg(feature = "std")]
+chain_spec_preset!(
+    development,
+    "dev", // Name of the preset
+    SEAMSE,
+    {
+        // Authorities (aura & grandpa)
+        aura: {
+            authorities: ["//Alice"]
+        },
+        grandpa: {
+            authorities: [["//Alice", 1]]
+        },
+        // Initial balances
+        balances: {
+            balances: [
+                ["//Alice", 1 << 60],
+                ["//Bob", 1 << 60]
+            ]
+        },
+        // Sudo
+        sudo: {
+            key: "//Alice"
+        }
+    }
+);
+
 /// The default types are being injected by [`derive_impl`](`frame_support::derive_impl`) from
 /// [`SoloChainDefaultConfig`](`struct@frame_system::config_preludes::SolochainDefaultConfig`),
 /// but overridden as needed.
